@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\StockExchangeServer.Domain.SharedKernel\StockExchangeServer.Domain.SharedKernel.csproj" />
+    <ProjectReference Include="..\StockExchangeServer.Domain\StockExchangeServer.Domain.csproj" />
+    <ProjectReference Include="..\StockExchangeServer.Infrastructure\StockExchangeServer.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Quotes\Exception\" />
+  </ItemGroup>
+
+</Project>
