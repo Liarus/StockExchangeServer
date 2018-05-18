@@ -19,7 +19,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\StockExchangeServer.Application\StockExchangeServer.Application.csproj" />
     <ProjectReference Include="..\StockExchangeServer.CompositionRoot\StockExchangeServer.CompositionRoot.csproj" />
+    <ProjectReference Include="..\StockExchangeServer.Domain.SharedKernel\StockExchangeServer.Domain.SharedKernel.csproj" />
+    <ProjectReference Include="..\StockExchangeServer.Domain\StockExchangeServer.Domain.csproj" />
+    <ProjectReference Include="..\StockExchangeServer.Infrastructure\StockExchangeServer.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

@@ -61,8 +61,8 @@ namespace StockExchangeServer.CompositionRoot
             .As<IQueryDispatcherAsync>()
             .InstancePerLifetimeScope();
 
-            //var assembly = Assembly.Load(new AssemblyName("StockExchangeServer.Application"));
-            //builder.RegisterAssemblyTypes(assembly).AsClosedTypesOf(typeof(IQueryHandlerAsync<,>));
+            var assembly = Assembly.Load(new AssemblyName("StockExchangeServer.Application"));
+            builder.RegisterAssemblyTypes(assembly).AsClosedTypesOf(typeof(IQueryHandlerAsync<,>));
         }
 
         private static void RegisterRepositories(ContainerBuilder builder)
