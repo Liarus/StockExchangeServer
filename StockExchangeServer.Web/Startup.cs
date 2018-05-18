@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using StockExchangeServer.CompositionRoot;
+using StockExchangeServer.Infrastructure.SignalRHubs;
 
 namespace StockExchangeServer.Web
 {
@@ -27,6 +28,7 @@ namespace StockExchangeServer.Web
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             services.AddCors();
+            services.AddSignalR();
             services.AddMvc();
 
             var containerBuilder = new ContainerBuilder();
@@ -51,6 +53,10 @@ namespace StockExchangeServer.Web
                .AllowCredentials()
            );
 
+            app.UseSignalR(routes =>
+            {
+                routes.MapHub<QuoteHub>("/quotes");
+            });
             app.UseStaticFiles();
             app.UseMvc();
         }
