@@ -12,6 +12,11 @@ namespace StockExchangeServer.Infrastructure.SignalRHubs
     {
         private readonly ICommandDispatcherAsync _commandDispatcher;
 
+        public QuoteHub(ICommandDispatcherAsync commandDispatcher)
+        {
+            _commandDispatcher = commandDispatcher;
+        }
+
         public async Task StartBroadcasting()
         {
             await _commandDispatcher.SendAsync<RequestQuotesCommand>(new RequestQuotesCommand(DateTime.Now));

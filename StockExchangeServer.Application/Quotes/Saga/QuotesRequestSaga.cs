@@ -21,7 +21,7 @@ namespace StockExchangeServer.Application.Quotes.Saga
         private readonly ConcurrentDictionary<string, QuoteDto> _savedQuotes = 
             new ConcurrentDictionary<string, QuoteDto>();
         private readonly object _updateQuotesLock = new object();
-        private readonly TimeSpan _updateInterval = TimeSpan.FromMilliseconds(250);
+        private readonly TimeSpan _updateInterval = TimeSpan.FromMilliseconds(2500);
         private readonly Timer _timer;
 
         public QuotesRequestSaga(IHubContext<QuoteHub> clients, IQuoteRepository quotes)
